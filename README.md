@@ -1,2 +1,101 @@
-# github-tutorial
-A tutorial for new students learning how to use github
+# Github Tutorial
+
+## Summary
+
+A tutorial for new students learning how to use Github and Python
+
+## Pre-requisities
+
+- Python
+- Git
+- Basic understanding of your terminal
+
+This tutorial uses WSL (Windows Subsystem for Linux) - using the BASH terminal.
+
+## Quick Start
+
+### Step 0 - Create a GitHub account and an access token
+
+### Step 1 - Cloning the test repository
+
+```bash
+git clone https://<username>:<token>@github.com/softnanolab/github-tutorial
+```
+
+### Step 2 - Create your own branch
+
+```bash
+git checkout -b <name>
+```
+
+### Step 3 - Create a file
+
+```bash
+touch softnanoexample/test_function.py
+```
+
+### Step 4 - Add some code
+
+```python
+#!/usr/bin/env python
+"""Am example function"""
+
+def example_function():
+    print("This is a test function!")
+    return
+
+def main():
+    example_function()
+    return
+
+if __name__ == '__main__':
+    main()
+```
+
+### Step 5 - Add your file to the repository and commit
+
+```bash
+git add softnanoexample/example.py
+git commit softnanoexample/example.py -m 'Adding example function'
+```
+
+### Step 6 - Push your changes to GitHub
+
+```bash
+git push --set-upstream origin <name>
+```
+
+### Step 7 - Create a new branch for package initialisation
+
+```bash
+git checkout -b <name>-package
+```
+
+### Step 8 - Create a `setup.py` file then commit and push
+
+```python
+```
+
+```bash
+pip install .
+python -c "import softnanoexample"
+```
+
+```bash
+git commit -a -m 'added setup.py'
+git push -u origin <name>-package
+```
+
+### Step 9 - Create a tests ready for running `pytest`
+
+```bash
+mkdir test
+touch test/test_example.py
+```
+
+```python
+from softnanoexample.example import function
+def test_function():
+    assert function() == "This is a test function!"
+    return
+```
