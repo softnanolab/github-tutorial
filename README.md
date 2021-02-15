@@ -86,7 +86,7 @@ git commit -a -m 'added setup.py'
 git push -u origin <name>-package
 ```
 
-### Step 9 - Create a tests ready for running `pytest`
+### Step 9 - Create a tests ready for running `pytest` (then commit and push)
 
 ```bash
 mkdir test
@@ -98,4 +98,29 @@ from softnanoexample.example import function
 def test_function():
     assert function() == "This is a test function!"
     return
+```
+
+```bash
+pip install . 
+pytest
+git commit -a -m 'added tests'
+```
+
+### Step 10 - Create a pull request
+
+### Step 11 - Add Continuous Integration
+
+```bash
+mkdir .github
+mkdir .github/workflows
+touch .github/workflows/quick-test.yml
+```
+
+```yml
+```
+
+```bash
+git add .github
+git commit -a -m 'added CI'
+git push
 ```
