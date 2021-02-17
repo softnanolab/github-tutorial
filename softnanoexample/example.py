@@ -1,3 +1,2 @@
 def function():
-    print('Hello World!')
-    return
+    return 'Hello World!'
